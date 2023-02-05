@@ -18,41 +18,57 @@ This code generates a random password in JavaScript. A string of characters is d
 <b>Step 1: Create an array of characters to choose from.</b>
 
 ```python
-var characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-=";
+// Define an array of characters to use for the password
+const charSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;':\"<>,.?/~`";
 ```
 <b>Step 2: Define a function to generate a random password.</b>
 
 ```python
+// Create a function to generate a random password
 function generatePassword(length) {
-    var password = "";
-    for (var i = 0; i < length; i++) {
-        var randomIndex = Math.floor(Math.random() * characters.length);
-        password += characters[randomIndex];
-    }
-    return password;
+  let password = "";
+
+  // Loop through the character set to create a password of the specified length
+  for (let i = 0; i < length; i++) {
+    password += charSet.charAt(Math.floor(Math.random() * charSet.length));
+  }
+
+  // Return the generated password
+  return password;
 }
 ```
 
 <b>Step 3: Call the function to generate a random password with a specified length.</b>
 
 ```python
-var password = generatePassword(16);
+// Call the generatePassword function to get a random password
+let password = generatePassword(12);
+
+// Log the generated password to the console
 console.log(password);
 ```
 
 <b> The final result should look like this:</b>
 ```python
-var characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-=";
+// Define an array of characters to use for the password
+const charSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;':\"<>,.?/~`";
 
+// Create a function to generate a random password
 function generatePassword(length) {
-    var password = "";
-    for (var i = 0; i < length; i++) {
-        var randomIndex = Math.floor(Math.random() * characters.length);
-        password += characters[randomIndex];
-    }
-    return password;
+  let password = "";
+
+  // Loop through the character set to create a password of the specified length
+  for (let i = 0; i < length; i++) {
+    password += charSet.charAt(Math.floor(Math.random() * charSet.length));
+  }
+
+  // Return the generated password
+  return password;
 }
 
-var password = generatePassword(16);
+// Call the generatePassword function to get a random password
+let password = generatePassword(12);
+
+// Log the generated password to the console
 console.log(password);
 ```
